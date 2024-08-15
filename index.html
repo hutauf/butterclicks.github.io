@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown {
+            margin-bottom: 20px;
+        }
+
+        #output {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Choose a Username</h1>
+    <div class="dropdown">
+        <select id="userDropdown" onchange="showMessage()">
+            <option value="">Select a username</option>
+            <option value="butterbrotman">butterbrotman</option>
+            <option value="Domi">Domi</option>
+            <option value="Fanti">Fanti</option>
+            <option value="Discojay">Discojay</option>
+        </select>
+    </div>
+    <div id="output"></div>
+</div>
+
+<script>
+    function showMessage() {
+        var userDropdown = document.getElementById("userDropdown");
+        var output = document.getElementById("output");
+        var selectedUser = userDropdown.value;
+
+        if (selectedUser === "butterbrotman") {
+            output.textContent = "You have 5000 more pages per day to submit";
+        } else if (selectedUser) {
+            output.textContent = "Hi " + selectedUser + ", you are good";
+        } else {
+            output.textContent = "";
+        }
+    }
+</script>
+
+</body>
+</html>
